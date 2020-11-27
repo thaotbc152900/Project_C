@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <windows.h>
 #include <string>
 #include <codecvt>
@@ -59,12 +59,10 @@ wstring MyWindows::ConvertToWString(string st)
 	wstring_convert<convert_t, wchar_t> strconverter;
 	return strconverter.from_bytes(st);
 }
-
-
 void MyWindows::Write(wstring st, int x, int y, int backgroundColor, int foregroundColor) {
 	HANDLE hout = GetStdHandle(STD_OUTPUT_HANDLE);
 	int stringlen = st.length();
-	const wchar_t* text = st.c_str();1
+	const wchar_t* text = st.c_str();
 	CHAR_INFO* consoletext = new CHAR_INFO[stringlen];
 	COORD a = { stringlen, 1 }, b = { 0, 0 };
 	SMALL_RECT c = { _Left + x, _Top + y, _Left + x + stringlen, _Top + y + 1 };

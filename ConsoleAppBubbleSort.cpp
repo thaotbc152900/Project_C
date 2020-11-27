@@ -13,6 +13,8 @@
 #include <fstream> 
 #include <time.h>       /* time */
 #include "MyWindows.h";
+#define MAX = 10000
+
 
 using namespace std;
 
@@ -66,7 +68,7 @@ void swapByReference(int& x, int& y) // pass by reference
 };
 void drawArray(MyWindows console, int *a, int w, int size, int left) {
 	for (int k = 0; k < size; k++)
-	{	//Bieu dien cac phan tu
+	{
 		int color = a[k] % 15;
 		if (color == BLUE) color = BLACK;
 		MyWindows xoa(left + w * k, 1, w - 1, HEIGHT - 4, BLUE, BLUE);
@@ -75,14 +77,15 @@ void drawArray(MyWindows console, int *a, int w, int size, int left) {
 		MyWindows c1(left + w * k, HEIGHT - 4 - a[k], w - 1, a[k], color, WHITE);
 		c1.clearConsole();
 		c1.drawFrame();
-		console.Write(to_string(a[k]), left + w * k, HEIGHT - 3, BLUE, WHITE);
+		//console.Write("  ", left + w * k, HEIGHT - 3, BLUE, WHITE);
+		console.Write(to_string(a[k]) + " ", left + w * k, HEIGHT - 3, BLUE, WHITE);
 	}
 } 
 
 int main()
 {
 	/* initialize random seed: */
-	srand(time(0));
+	//srand(time(NULL));
 
 	/*MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
 	console.clearConsole();
@@ -90,68 +93,20 @@ int main()
 	console.Write(" Bubble Sort ", 2, 0, BLUE, WHITE);
 
 
-	int a[15] = {};
+	/*int a[15] = {};
 	int size = sizeof(a) / sizeof(a[0]);
 
 	for (int i = 0; i < size; i++)
 	{
 		a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
-	}
-	cout << "Mang: ";
-	for (int i = 0; i < size; i++) {
-		cout << a[i] << " ";
-	}
-
+	} 
 
 	int w = 3;
 	int left = (WIDTH / 2 - (w * size)) / 2;
-	drawArray(console, a, w, size, left);*/
-	int select;
-	cout << " -----------------------------------------------TRANG CHU-------------------------------------------- \n";
-	cout << "|                                      ___________________________                                   |\n";
-	cout << "|                                     |       1. Bubble Sort      |                                  |\n";
-	cout << "|                                     |___________________________|                                  |\n";
-	cout << "|                                      ___________________________                                   |\n";
-	cout << "|                                     |     2. Selection Sort     |                                  |\n";
-	cout << "|                                     |___________________________|                                  |\n";
-	cout << "|                                      ___________________________                                   |\n";
-	cout << "|                                     |     3. Insertion Sort     |                                  |\n";
-	cout << "|                                     |___________________________|                                  |\n";
-	cout << " ---------------------------------------------------------------------------------------------------- \n";
+	drawArray(console, a, w, size, left); 
 
-	cout << "\n";
-	cout << "\n";
-	cout << "Moi ban nhap lua chon : \n >";
-	cin >> select;
-	switch (select)
-	{
-	case 1:
-		//srand(time(0));
-
-		MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
-		console.clearConsole();
-		console.drawFrame();
-		console.Write(" Bubble Sort ", 2, 0, BLUE, WHITE);
-
-
-		int a[15] = {};
-		int size = sizeof(a) / sizeof(a[0]);
-
-		for (int i = 0; i < size; i++)
-		{
-			a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
-		}
-		/*cout << "Mang: ";
-		for (int i = 0; i < size; i++) {
-			cout << a[i] << " ";
-		}*/
-
-
-		int w = 3;
-		int left = (WIDTH / 2 - (w * size)) / 2;
-		drawArray(console, a, w, size, left);
 		// bubble sort  
-		for (int i = 0; i < size - 1; i++)
+		 /*for (int i = 0; i < size - 1; i++)
 		{
 			for (int j = 0; j < size - 1 - i; j++)
 			{
@@ -173,7 +128,77 @@ int main()
 			{
 				console.Write(to_string(a[j]) + " ", left + w * j, HEIGHT - 3, RED, WHITE);
 			}
-			Sleep(1000);
+			Sleep(500);
+		}
+		console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
+		console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
+		console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
+		console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
+
+		char c = _getch();*/
+
+
+
+	 int select;
+	cout << " -----------------------------------------------TRANG CHU------------------------------------- \n";
+	cout << "|                                      ___________________________                            |\n";
+	cout << "|                                     |       1. Bubble Sort      |                           |\n";
+	cout << "|                                     |___________________________|                           |\n";
+	cout << "|                                      ___________________________                            |\n";
+	cout << "|                                     |     2. Selection Sort     |                           |\n";
+	cout << "|                                     |___________________________|                           |\n";
+	cout << "|                                      ___________________________                            |\n";
+	cout << "|                                     |     3. Insertion Sort     |                           |\n";
+	cout << "|                                     |___________________________|                           |\n";
+	cout << " --------------------------------------------------------------------------------------------- \n";
+
+	cout << "\n";
+	cout << "\n";
+	cout << "Moi ban nhap lua chon : \n >";
+	cin >> select;
+	switch (select){
+	case 1: 
+		MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
+		console.clearConsole();
+		console.drawFrame();
+		console.Write(" Bubble Sort ", 2, 0, BLUE, WHITE);
+		int a[15] = { };
+		int size = sizeof(a) / sizeof(a[0]);
+
+		  for (int i = 0; i < size; i++)
+		{
+			a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
+		}
+
+		int w = 3;
+		int left = (WIDTH / 2 - (w * size)) / 2;
+
+		drawArray(console, a, w, size, left);
+	// bubble sort  
+		for (int i = 0; i < size - 1; i++)
+		{
+			for (int j = 0; j < size - 1 - i; j++)
+			{
+				for (int k = 0; k < size; k++)
+				{
+					console.Write("  ", left + w * k, HEIGHT - 2, BLUE, WHITE);
+				}
+				console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
+				console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
+				if (a[j] > a[j + 1]) {
+					swapByPointer(&a[j], &a[j + 1]);
+					
+					drawArray(console, a, w, size, left);
+				}
+				console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
+				console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
+				Sleep(100);
+			}
+			for (int h = size - 1 - i; h < size; h++)
+			{
+				//console.Write(to_string(a[h]) + " ", left + w * h, HEIGHT - 3, RED, WHITE);
+			}
+			Sleep(500);
 		}
 		console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
 		console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
@@ -181,8 +206,8 @@ int main()
 		console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
 
 		char c = _getch();
-	
-		break;
+		
+		break;	
 	}
 
 }

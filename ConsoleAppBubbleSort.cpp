@@ -13,7 +13,7 @@
 #include <fstream> 
 #include <time.h>       /* time */
 #include "MyWindows.h";
-#define MAX = 10000
+
 
 
 using namespace std;

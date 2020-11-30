@@ -191,17 +191,21 @@ int main()
 		for (int i = 0; i < sizeb - 1; i++)
 		{
 			int minidx = i;
+			two.Write("L", leftb + wb * i, HEIGHT - 2, RED, WHITE);
 			for (int j = i + 1; j < sizeb; j++)
 			{
+				two.Write("R", leftb + wb * j , HEIGHT - 2, RED, WHITE);
 				if (b[j] < b[minidx])
 					/*minidx = j;*/
 				swapByPointer(&b[j], &b[minidx]);
 				
 				drawArray(two, b, wb, sizeb, leftb);
 				Sleep(1000);
+				two.Write(" ", leftb + wb * j , HEIGHT - 2, BLUE, WHITE);
 				/*console.Write("", left + w1 * j, HEIGHT - 2, RED, WHITE);
 				console.Write("", left + w1 * (j + 1), HEIGHT - 2, RED, WHITE);*/
 			}
+			two.Write(" ", leftb + wb * i, HEIGHT - 2, BLUE, WHITE);
 
 			/*Sleep(100);
 			if (a[minidx] < a[i]) {

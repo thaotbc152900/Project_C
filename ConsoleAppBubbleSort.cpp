@@ -84,59 +84,7 @@ void drawArray(MyWindows console, int *a, int w, int size, int left) {
 
 int main()
 {
-	srand(time(0));
-	/* initialize random seed: */
-	//srand(time(NULL));
 
-	/*MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
-	console.clearConsole();
-	console.drawFrame();
-	console.Write(" Bubble Sort ", 2, 0, BLUE, WHITE);
-
-
-	/*int a[15] = {};
-	int size = sizeof(a) / sizeof(a[0]);
-
-	for (int i = 0; i < size; i++)
-	{
-		a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
-	}
-
-	int w = 3;
-	int left = (WIDTH / 2 - (w * size)) / 2;
-	drawArray(console, a, w, size, left);
-
-		// bubble sort
-		 /*for (int i = 0; i < size - 1; i++)
-		{
-			for (int j = 0; j < size - 1 - i; j++)
-			{
-				for (int k = 0; k < size; k++)
-				{
-					console.Write("  ", left + w * k, HEIGHT - 2, BLUE, WHITE);
-				}
-				console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
-				console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
-				if (a[j] > a[j + 1]) {
-					swapByPointer(&a[j], &a[j + 1]);
-					drawArray(console, a, w, size, left);
-				}
-				console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
-				console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
-				Sleep(300);
-			}
-			for (int j = size - 1 - i; j < size; j++)
-			{
-				console.Write(to_string(a[j]) + " ", left + w * j, HEIGHT - 3, RED, WHITE);
-			}
-			Sleep(500);
-		}
-		console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
-		console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
-		console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
-		console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
-
-		char c = _getch();*/
 
 
 
@@ -166,134 +114,141 @@ int main()
 	cin >> select;
 	switch (select) {
 	case 1:
-		//	MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
-		//	console.clearConsole();
-		//	console.drawFrame();
-		//	console.Write(" Bubble Sort ", 2, 0, BLUE, WHITE);
-		//	int a[15] = { };
-		//	int size = sizeof(a) / sizeof(a[0]);
+	{
 
-		//	  for (int i = 0; i < size; i++)
-		//	{
-		//		a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
-		//	}
-		//	  /*int stA[] = arrayToString(a, size);
-		//	  console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
-		//	int w = 3;
-		//	int left = (WIDTH - (w * size)) / 2;
-
-		//	drawArray(console, a, w, size, left);
-		//// bubble sort  
-		//	for (int i = 0; i < size - 1; i++)
-		//	{
-		//		for (int j = 0; j < size - 1 - i; j++)
-		//		{
-		//			for (int k = 0; k < size; k++)
-		//			{
-		//				console.Write("  ", left + w * k, HEIGHT - 2, BLUE, WHITE);
-		//			}
-		//			console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
-		//			console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
-		//			if (a[j] > a[j + 1]) {
-		//				swapByPointer(&a[j], &a[j + 1]);
-		//				
-		//				drawArray(console, a, w, size, left);
-		//			}
-		//			console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
-		//			console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
-		//			Sleep(100);
-		//		}
-		//		for (int h = size - 1 - i; h < size; h++)
-		//		{
-		//			//console.Write(to_string(a[h]) + " ", left + w * h, HEIGHT - 3, RED, WHITE);
-		//		}
-		//		Sleep(1000);
-		//	}
-		//	console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
-		//	console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
-		//	console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
-		//	console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
-
-		//	char c = _getch();
-
-		break;
-	case 2:
-	//	MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
-	//	console.clearConsole();
-	//	console.drawFrame();
-	//	console.Write(" Select Sort ", 2, 0, BLUE, WHITE);
-	//	int arr[15] = { };
-	//	int size = sizeof(arr) / sizeof(arr[0]);
-
-	//	for (int i = 0; i < size; i++)
-	//	{
-	//		arr[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
-	//	}
-	//	/*int stA[] = arrayToString(a, size);
-	//	console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
-	//	int w1 = 3;
-	//	int left = (WIDTH / 2 - (w1 * size)) / 2;
-
-	//	drawArray(console, arr, w1, size, left);
-	//	// select sort  
-	//	for (int i = 0; i < size - 1; i++)
-	//	{
-	//		int minidx = i;
-	//		for (int j = i + 1; j < size; j++)
-	//		{
-	//			if (arr[j] < arr[minidx])
-	//				/*minidx = j;*/
-	//			swapByPointer(&arr[j], &arr[minidx]);
-	//			drawArray(console, arr, w1, size, left + WIDTH / 2);
-	//			Sleep(100);
-	//			/*console.Write("", left + w1 * j, HEIGHT - 2, RED, WHITE);
-	//			console.Write("", left + w1 * (j + 1), HEIGHT - 2, RED, WHITE);*/
-	//		}
-
-	//		/*Sleep(100);
-	//		if (a[minidx] < a[i]) {
-	//			swapByPointer(&a[minidx], &a[i]);
-	//			drawArray(console, a, w, size, left );
-	//		}*/
-	//		/*Sleep(100);*/
-	//	}
-	//	drawArray(console, arr, w1, size, left + WIDTH / 2);
-	//console.Write(to_string(arr[0]) + " ", left, HEIGHT - 3, RED, WHITE);
-	//console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
-	//console.Write("   ", left + w1, HEIGHT - 2, BLUE, WHITE);
-	//console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
-
-	//char c1 = _getch();
-
-	break;
-	//insert sort 
-	case 3:
 		MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
-			console.clearConsole();
-			console.drawFrame();
-			console.Write(" Insert Sort ", 2, 0, BLUE, WHITE);
-			int a[15] = { };
-			int size = sizeof(a) / sizeof(a[0]);
+		console.clearConsole();
+		console.drawFrame();
+		console.Write(" Bubble Sort ", 2, 0, BLUE, WHITE);
+		int a[15] = { };
+		int size = sizeof(a) / sizeof(a[0]);
 
-			for (int i = 0; i < size; i++)
+		for (int i = 0; i < size; i++)
+		{
+			a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
+		}
+		/*int stA[] = arrayToString(a, size);
+		console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
+		int w = 3;
+		int left = (WIDTH - (w * size)) / 2;
+
+		drawArray(console, a, w, size, left);
+		// bubble sort  
+		for (int i = 0; i < size - 1; i++)
+		{
+			for (int j = 0; j < size - 1 - i; j++)
 			{
-				a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
+				for (int k = 0; k < size; k++)
+				{
+					console.Write("  ", left + w * k, HEIGHT - 2, BLUE, WHITE);
+				}
+				console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
+				console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
+				if (a[j] > a[j + 1]) {
+					swapByPointer(&a[j], &a[j + 1]);
+
+					drawArray(console, a, w, size, left);
+				}
+				console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
+				console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
+				Sleep(100);
 			}
-			/*int stA[] = arrayToString(a, size);
-			console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
-			int w = 3;
-			int left = (WIDTH  - (w * size)) / 2;
-		for (int i = 1; i < size; i++) {
+			for (int h = size - 1 - i; h < size; h++)
+			{
+				//console.Write(to_string(a[h]) + " ", left + w * h, HEIGHT - 3, RED, WHITE);
+			}
+			Sleep(1000);
+		}
+		console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
+		console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
+		console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
+		console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
+
+		char c = _getch();
+
+	}
+	case 2: 
+	{
+
+		MyWindows two(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
+		two.clearConsole();
+		two.drawFrame();
+		two.Write(" Select Sort ", 2, 0, BLUE, WHITE);
+		int b[15] = { };
+		int sizeb = sizeof(b) / sizeof(b[0]);
+
+		for (int i = 0; i < sizeb; i++)
+		{
+			b[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
+		}
+		/*int stA[] = arrayToString(a, size);
+		console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
+		int wb = 3;
+		int leftb = (WIDTH / 2 - (wb * sizeb)) / 2;
+
+		drawArray(two, b, wb, sizeb, leftb);
+		// select sort  
+		for (int i = 0; i < sizeb - 1; i++)
+		{
+			int minidx = i;
+			for (int j = i + 1; j < sizeb; j++)
+			{
+				if (b[j] < b[minidx])
+					/*minidx = j;*/
+				swapByPointer(&b[j], &b[minidx]);
+				
+				drawArray(two, b, wb, sizeb, leftb);
+				Sleep(1000);
+				/*console.Write("", left + w1 * j, HEIGHT - 2, RED, WHITE);
+				console.Write("", left + w1 * (j + 1), HEIGHT - 2, RED, WHITE);*/
+			}
+
+			/*Sleep(100);
+			if (a[minidx] < a[i]) {
+				swapByPointer(&a[minidx], &a[i]);
+				drawArray(console, a, w, size, left );
+			}*/
+			/*Sleep(100);*/
+		}
+		//drawArray(two, b, wb, sizeb, leftb + WIDTH / 2);
+		two.Write(to_string(b[0]) + " ", leftb, HEIGHT - 3, RED, WHITE);
+		two.Write("   ", leftb, HEIGHT - 2, BLUE, WHITE);
+		two.Write("   ", leftb + wb, HEIGHT - 2, BLUE, WHITE);
+		two.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
+
+		char c1 = _getch();
+
+	}
+	//insert sort 
+	case 3: 
+	{
+
+		MyWindows three(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
+		three.clearConsole();
+		three.drawFrame();
+		three.Write(" Insert Sort ", 2, 0, BLUE, WHITE);
+		int d[15] = { };
+		int sized = sizeof(d) / sizeof(d[0]);
+
+		for (int i = 0; i < sized; i++)
+		{
+			d[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
+		}
+		/*int stA[] = arrayToString(a, size);
+		console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
+		int wd = 3;
+		int leftd = (WIDTH - (wd * sized)) / 2;
+		for (int i = 1; i < sized; i++) {
 			int j = i - 1;
-			while (j >= 0 && a[j] > a[j + 1]) {
-				swapByPointer(&a[j], &a[j+1]);
-				drawArray(console, a, w, size, left);
+			while (j >= 0 && d[j] > d[j + 1]) {
+				swapByPointer(&d[j], &d[j + 1]);
+				drawArray(three, d, wd, sized, leftd);
 				Sleep(500);
 				j--;
 			}
 		}
-		char c1 = _getch();
-		break;
+		char c2 = _getch();
+	}
 	}
 }
 

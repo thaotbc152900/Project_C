@@ -18,8 +18,8 @@
 
 using namespace std;
 
-#define WIDTH  95
-#define HEIGHT 25
+#define WIDTH  120
+#define HEIGHT 30
 
 #define BLACK			0
 #define BLUE			1
@@ -84,15 +84,11 @@ void drawArray(MyWindows console, int *a, int w, int size, int left) {
 
 int main()
 {
-
-
-
-
+	srand(time(0));
 	int select;
 	do
 	{
-
-		MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
+		MyWindows console(0, 0, WIDTH, HEIGHT, BLACK, WHITE);
 		console.clearConsole();
 		console.drawFrame();
 		console.Write("Menu", 10, 0, YELLOW, RED);
@@ -118,13 +114,14 @@ int main()
 		cout << "Moi ban nhap lua chon : \n >";*/
 		cin >> select;
 		switch (select) {
+			
 		case 1:
 		{
-
-			MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, WHITE);
+			console.clearConsole();
+			MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, RED);
 			console.clearConsole();
 			console.drawFrame();
-			console.Write(" Bubble Sort ", 2, 0, BLUE, WHITE);
+			console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
 			int a[15] = { };
 			int size = sizeof(a) / sizeof(a[0]);
 
@@ -134,7 +131,7 @@ int main()
 			}
 			/*int stA[] = arrayToString(a, size);
 			console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
-			int w = 3;
+			int w = 4;
 			int left = (WIDTH - (w * size)) / 2;
 
 			drawArray(console, a, w, size, left);
@@ -189,8 +186,8 @@ int main()
 			}
 			/*int stA[] = arrayToString(a, size);
 			console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
-			int wb = 3;
-			int leftb = (WIDTH / 2 - (wb * sizeb)) / 2;
+			int wb = 4;
+			int leftb = (WIDTH  - (wb * sizeb)) / 2;
 
 			drawArray(two, b, wb, sizeb, leftb);
 			// select sort  
@@ -246,16 +243,26 @@ int main()
 			}
 			/*int stA[] = arrayToString(a, size);
 			console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
-			int wd = 3;
+			int wd = 4;
 			int leftd = (WIDTH - (wd * sized)) / 2;
 			for (int i = 1; i < sized; i++) {
-				int j = i - 1;
+				three.Write("L", leftd + wd * i, HEIGHT - 2, RED, WHITE);
+				int j = i - 1;				
 				while (j >= 0 && d[j] > d[j + 1]) {
-					swapByPointer(&d[j], &d[j + 1]);
+					
+					swapByPointer(&d[j], &d[j + 1]); 
+					//three.Write("R", leftd + wd *(j-1), HEIGHT - 2, RED, WHITE);
+					three.Write("M", leftd + wd * j, HEIGHT - 2, RED, WHITE);
 					drawArray(three, d, wd, sized, leftd);
-					Sleep(500);
+					
+					Sleep(100);
+					three.Write(" ", leftd + wd * j, HEIGHT - 2,BLUE, WHITE);
+					//three.Write(" ", leftd + wd * (j-1), HEIGHT - 2, BLUE, WHITE);
 					j--;
+					
 				}
+				three.Write(" ", leftd + wd * i, HEIGHT - 2, BLUE, WHITE);
+				//console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
 			}
 			char c2 = _getch();
 			break;

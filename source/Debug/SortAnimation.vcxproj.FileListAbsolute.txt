@@ -1,0 +1,2 @@
+D:\Project_C\source\Debug\SortAnimation.exe
+D:\Project_C\source\Debug\SortAnimation.pdb

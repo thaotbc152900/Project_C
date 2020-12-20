@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\header",
+    "\\source",
+    "\\source\\Debug"
   ],
-  "SelectedNode": "\\ConsoleAppBubbleSort.cpp",
+  "SelectedNode": "\\header\\bubble.h",
   "PreviewInSolutionExplorer": false
 }

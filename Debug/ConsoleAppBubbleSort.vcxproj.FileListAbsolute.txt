@@ -1,4 +1,0 @@
-D:\Projects c++\Project_C\Debug\ConsoleAppBubbleSort.exe
-D:\Projects c++\Project_C\Debug\ConsoleAppBubbleSort.pdb
-D:\Project_C\Debug\ConsoleAppBubbleSort.exe
-D:\Project_C\Debug\ConsoleAppBubbleSort.pdb

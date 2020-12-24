@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Ten: ...
 	Lop: ...
 	Project: ....
@@ -93,7 +93,7 @@ void printFrame() {
 
 int main()
 {
-	srand(time(0));
+	//srand(time(0));
 	int select;
 	do
 	{
@@ -112,60 +112,85 @@ int main()
 		console.Write( choose, 25, 14, BLACK, RED);*/
 		//console.Write(select, 20, 15, BLACK, RED);
 		switch (select) {
-
 		case 1:
 		{
-			MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, RED);
-			console.clearConsole();
-			console.drawFrame();
-			console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
-			int a[15] = { };
-			int size = sizeof(a) / sizeof(a[0]);
+			
+			
+				MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, RED);
+				console.clearConsole();
+				console.drawFrame();
+				console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
+				int a[15] = { };
+				int size = sizeof(a) / sizeof(a[0]);
 
-			for (int i = 0; i < size; i++)
-			{
-				a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
-			}
-			/*int stA[] = arrayToString(a, size);
-			console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
-			int w = 4;
-			int left = (WIDTH - (w * size)) / 2;
-
-			drawArray(console, a, w, size, left);
-			// bubble sort  
-			for (int i = 0; i < size - 1; i++)
-			{
-				for (int j = 0; j < size - 1 - i; j++)
+				for (int i = 0; i < size; i++)
 				{
-					for (int k = 0; k < size; k++)
+					a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
+				}
+				/*int stA[] = arrayToString(a, size);
+				console.Write("Input: " + stA, 1, 12, BLUE, WHITE);*/
+				int w = 4;
+				int left = (WIDTH - (w * size)) / 2;
+
+				drawArray(console, a, w, size, left);
+				// bubble sort  
+				for (int i = 0; i < size - 1; i++)
+				{
+					for (int j = 0; j < size - 1 - i; j++)
 					{
-						console.Write("  ", left + w * k, HEIGHT - 2, BLUE, WHITE);
-					}
-					console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
-					console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
-					if (a[j] > a[j + 1]) {
-						swapByPointer(&a[j], &a[j + 1]);
+						for (int k = 0; k < size; k++)
+						{
+							console.Write("  ", left + w * k, HEIGHT - 2, BLUE, WHITE);
+						}
+						console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
+						console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
+						if (a[j] > a[j + 1]) {
+							swapByPointer(&a[j], &a[j + 1]);
 
-						drawArray(console, a, w, size, left);
+							drawArray(console, a, w, size, left);
+						}
+						console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
+						console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
+						Sleep(500);
+
+
+						//if (_kbhit())
+						//{
+						//	char key = _getch();
+						//	if (key == 27)
+						//	{
+						//		break;
+						//	}
+						//}
+
+
 					}
-					console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
-					console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
+
+					for (int h = size - 1 - i; h < size; h++)
+					{
+						console.Write(to_string(a[h]) + " ", left + w * h, HEIGHT - 3, RED, WHITE);
+					}
 					Sleep(100);
+					// Bắt phím ESC để dừng console chương trình
+					if (_kbhit())
+					{
+						char key = _getch();
+						if (key == 27)
+						{
+							break;
+						}
+					}
 				}
-				for (int h = size - 1 - i; h < size; h++)
-				{
-					//console.Write(to_string(a[h]) + " ", left + w * h, HEIGHT - 3, RED, WHITE);
-				}
-				Sleep(100);
-			}
-			console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
-			console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
-			console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
-			console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
+				console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
+				console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
+				console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
+				console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
 
-			char c = _getch();
-			break;
 
+
+				char c = _getch();
+				break;
+			
 		}
 		case 2:
 		{
@@ -206,12 +231,22 @@ int main()
 					console.Write("", left + w1 * (j + 1), HEIGHT - 2, RED, WHITE);*/
 				}
 				two.Write(" ", leftb + wb * i, HEIGHT - 2, BLUE, WHITE);
+				// Bắt phím ESC để dừng console chương trình
+				if (_kbhit())
+				{
+					char key = _getch();
+					if (key == 27)
+					{
+						break;
+					}
+				}
 			}
 			//drawArray(two, b, wb, sizeb, leftb + WIDTH / 2);
 			two.Write(to_string(b[0]) + " ", leftb, HEIGHT - 3, RED, WHITE);
 			two.Write("   ", leftb, HEIGHT - 2, BLUE, WHITE);
 			two.Write("   ", leftb + wb, HEIGHT - 2, BLUE, WHITE);
 			two.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
+			
 
 			char c1 = _getch();
 			break;
@@ -238,23 +273,32 @@ int main()
 			for (int i = 1; i < sized; i++) {
 				three.Write("L", leftd + wd * i, HEIGHT - 2, RED, WHITE);
 				int j = i - 1;
+				// Bắt phím ESC để dừng console chương trình
+				if (_kbhit())
+				{
+					char key = _getch();
+					if (key == 27)
+					{
+						break;
+					}
+				}
 				while (j >= 0 && d[j] > d[j + 1]) {
 
 					swapByPointer(&d[j], &d[j + 1]);
 					//three.Write("R", leftd + wd *(j-1), HEIGHT - 2, RED, WHITE);
 					three.Write("M", leftd + wd * j, HEIGHT - 2, RED, WHITE);
 					drawArray(three, d, wd, sized, leftd);
-
-					Sleep(100);
+					Sleep(100);					
 					three.Write(" ", leftd + wd * j, HEIGHT - 2, BLUE, WHITE);
 					//three.Write(" ", leftd + wd * (j-1), HEIGHT - 2, BLUE, WHITE);
-					j--;
-
+					j--;				
 				}
 				three.Write(" ", leftd + wd * i, HEIGHT - 2, BLUE, WHITE);
 				//console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
+
 			}
 			char c2 = _getch();
+			
 			break;
 		}
 		case 4:

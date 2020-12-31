@@ -1,0 +1,14 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ConsoleAppBubbleSort.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  SortAnimation.cpp
+D:\Project_C\ConsoleAppBubbleSort\SortAnimation.cpp(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  MyWindows.cpp
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(64,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(67,14): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(68,25): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(68,35): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(68,50): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(68,72): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(83,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Project_C\ConsoleAppBubbleSort\MyWindows.cpp(83,34): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+  Generating Code...
+  ConsoleAppBubbleSort.vcxproj -> D:\Project_C\x64\Debug\SortAnimation.exe

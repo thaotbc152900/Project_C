@@ -1,2 +1,0 @@
-D:\Project_C\source\Debug\ConsoleAppBubbleSort.exe
-D:\Project_C\source\Debug\ConsoleAppBubbleSort.pdb

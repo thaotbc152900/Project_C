@@ -1,4 +1,10 @@
-﻿#include <iostream>
+﻿/*
+	Ten: ...
+	Lop: ...
+	Project: ....
+	.....
+*/
+#include <iostream>
 #include <conio.h> 
 #include <string>
 #include <algorithm>
@@ -6,13 +12,12 @@
 #include <cstdlib>
 #include <fstream> 
 #include <time.h>       /* time */
-#include "MyWindows.h";
+#include "MyWindows.h"
 
 using namespace std;
 
-#define WIDTH  120
+#define WIDTH 80
 #define HEIGHT 30
-
 #define BLACK			0
 #define BLUE			1
 #define GREEN			2
@@ -22,24 +27,15 @@ using namespace std;
 #define BROWN			6
 #define LIGHTGRAY		7
 #define DARKGRAY		8
-#define LIGHTBLUE		9
+#define ORANGE			9
 #define LIGHTGREEN		10
 #define LIGHTCYAN		11
 #define LIGHTRED		12
 #define LIGHTMAGENTA	13
 #define YELLOW			14
 #define WHITE			15
-   
-string arrayToString(int a[], int size) 
-{
 
-	string st = "";
-	for (int i = 0; i < size; i++)
-	{
-		st += to_string(a[i]) + " ";
-	}
-	return st;
-}
+
 void swapByValue(int x, int y) // pass by value
 {
 	int temp = x;
@@ -69,43 +65,57 @@ void drawArray(MyWindows console, int *a, int w, int size, int left) {
 		MyWindows c1(left + w * k, HEIGHT - 4 - a[k], w - 1, a[k], color, WHITE);
 		c1.clearConsole();
 		c1.drawFrame();
-		console.Write(to_string(a[k])+ " ", left + w * k, HEIGHT - 3, BLUE, WHITE);
+		//console.Write("  ", left + w * k, HEIGHT - 3, BLUE, WHITE);
+		console.Write(to_string(a[k]) + " ", left + w * k, HEIGHT - 3, BLUE, WHITE);
 	}
 } 
+int option(MyWindows input) {
+	input.clearConsole();
+	input.drawFrame();
+	input.Write("Menu", 20, 0, YELLOW, RED);
+	input.Write(" 1. Bubble Sort", 5, 3, BLACK, RED);
+	input.Write(" 2. Selection Sort", 5, 6, BLACK, RED);
+	input.Write(" 3. Insertion Sort", 5, 9, BLACK, RED);
+	input.Write(" 4. Exit", 5, 12, BLACK, RED);
+	input.Write("Moi ban nhap lua chon :", 1, 15, BLACK, RED);
+	input.gotoXY(30, 15);
+	int op;
+	cin >> op;
+	return op;
+}
 
 int main()
 {
-	int select;
-	do
+	
+	/*MyWindows menu(5, 24, 60, 5, RED, WHITE);
+	menu.clearConsole();
+	menu.drawFrame();
+	menu.Write("Menu", 12, 0, BLUE, WHITE);*/
+
+	MyWindows input(85, 2, 35, 20, BLACK, WHITE);
+	
+	
+	
+	MyWindows console(2, 0, WIDTH, HEIGHT, BLUE, RED);
+	console.clearConsole();
+	console.drawFrame();
+	console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
+
+	int a[15] = { };
+	int size = sizeof(a) / sizeof(a[0]);
+	srand(time(0));
+	for (int i = 0; i < size; i++)
 	{
-		MyWindows console0(0, 0, WIDTH, HEIGHT, BLACK, WHITE);
-		console0.clearConsole();
-		console0.drawFrame();
-		console0.Write("Menu", 10, 0, YELLOW, RED);
-		console0.Write(" 1. Bubble Sort", 45, 8, BLACK, RED);
-		console0.Write(" 2. Selection Sort", 45, 10, BLACK, RED);
-		console0.Write(" 3. Insertion Sort", 45, 12, BLACK, RED);
-		console0.Write(" 4. Exit", 45, 14, BLACK, RED);
-		console0.Write("Moi ban nhap lua chon :", 10, 18, BLACK, RED);
+		a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
+	}
+	int w = 4;
+	int left = (WIDTH - (w * size)) / 2;
+	drawArray(console, a, w, size, left);
+	
+	while (true) {
 
-		cin >> select;
-
-		MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, RED);
-		console.clearConsole();
-		console.drawFrame();
-		console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
-		int a[15] = { };
-		int size = sizeof(a) / sizeof(a[0]);
-		for (int i = 0; i < size; i++)
-		{
-			a[i] = (rand() % (HEIGHT - 6)) + 2; // 1 to 100
-		}
-		int w = 4;
-		int left = (WIDTH - (w * size)) / 2;
-		drawArray(console, a, w, size, left);
-
-		switch (select)
-		{
+		int op = option(input);
+		switch (op) {
 		case 1:
 		{
 			for (int i = 0; i < size - 1; i++)
@@ -196,7 +206,7 @@ int main()
 		{
 			console.clearConsole();
 			console.drawFrame();
-			console.Write(" insert Sort ", 2, 0, BLUE, WHITE);
+			console.Write(" Insertion Sort ", 2, 0, BLUE, WHITE);
 			for (int i = 1; i < size; i++) {
 				console.Write("L", left + w * i, HEIGHT - 2, RED, WHITE);
 				int j = i - 1;
@@ -233,9 +243,8 @@ int main()
 			cout << "Ban da thoat chuong trinh" << endl;
 			break;
 		}
-	}
 
-			} while (select != 4); ;
+		}
+	}
 }
- 
 

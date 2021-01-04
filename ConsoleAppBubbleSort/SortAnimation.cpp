@@ -16,24 +16,24 @@
 
 using namespace std;
 
-#define WIDTH 80
-#define HEIGHT 30
-#define BLACK			0
-#define BLUE			1
-#define GREEN			2
-#define CYAN			3
-#define RED				4
-#define MAGENTA			5
-#define BROWN			6
-#define LIGHTGRAY		7
-#define DARKGRAY		8
-#define ORANGE			9
-#define LIGHTGREEN		10
-#define LIGHTCYAN		11
-#define LIGHTRED		12
-#define LIGHTMAGENTA	13
-#define YELLOW			14
-#define WHITE			15
+static const int  WIDTH{80};
+static const int  HEIGHT{ 30 };
+static const int BLACK{ 0 };
+static const int BLUE{ 1 };
+static const int GREEN{ 2 };
+static const int CYAN{ 3 };
+static const int RED{ 4 };
+static const int MAGENTA{ 5 };
+static const int BROWN{ 6 };
+static const int LIGHTGRAY{ 7 };
+static const int DARKGRAY{ 8 };
+static const int ORANGE{ 9 };
+static const int LIGHTGREEN{ 10 };
+static const int LIGHTCYAN{ 11 };
+static const int LIGHTRED{ 12 };
+static const int LIGHTMAGENTA{ 13 };
+static const int YELLOW{ 14 };
+static const int WHITE{ 15 };
 
 
 void swapByValue(int x, int y) // pass by value
@@ -85,21 +85,18 @@ int option(MyWindows input) {
 }
 
 int main()
-{
-	
+{	
 	/*MyWindows menu(5, 24, 60, 5, RED, WHITE);
 	menu.clearConsole();
 	menu.drawFrame();
 	menu.Write("Menu", 12, 0, BLUE, WHITE);*/
 
 	MyWindows input(85, 2, 35, 20, BLACK, WHITE);
+	MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, RED);
 	
-	
-	
-	MyWindows console(2, 0, WIDTH, HEIGHT, BLUE, RED);
 	console.clearConsole();
 	console.drawFrame();
-	console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
+	console.Write(" Sort ", 12, 0, BLUE, WHITE);
 
 	int a[15] = { };
 	int size = sizeof(a) / sizeof(a[0]);
@@ -112,12 +109,16 @@ int main()
 	int left = (WIDTH - (w * size)) / 2;
 	drawArray(console, a, w, size, left);
 	
-	while (true) {
+	while (true) 
+	{
 
 		int op = option(input);
 		switch (op) {
 		case 1:
 		{
+			console.clearConsole();
+			console.drawFrame();
+			console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
 			for (int i = 0; i < size - 1; i++)
 			{
 				for (int j = 0; j < size - 1 - i; j++)
@@ -156,7 +157,7 @@ int main()
 			console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
 			console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
 			console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
-			console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
+			//console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
 			char c = _getch();
 			break;
 		}

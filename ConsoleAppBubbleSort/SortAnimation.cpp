@@ -72,13 +72,13 @@ void drawArray(MyWindows console, int *a, int w, int size, int left) {
 int option(MyWindows input) {
 	input.clearConsole();
 	input.drawFrame();
-	input.Write("Menu", 20, 0, YELLOW, RED);
+	input.Write("Menu", 16, 0, YELLOW, RED);
 	input.Write(" 1. Bubble Sort", 5, 3, BLACK, RED);
 	input.Write(" 2. Selection Sort", 5, 6, BLACK, RED);
 	input.Write(" 3. Insertion Sort", 5, 9, BLACK, RED);
 	input.Write(" 4. Exit", 5, 12, BLACK, RED);
 	input.Write("Moi ban nhap lua chon :", 1, 15, BLACK, RED);
-	input.gotoXY(30, 15);
+	input.gotoXY(29, 15);
 	int op;
 	cin >> op;
 	return op;
@@ -91,15 +91,15 @@ int main()
 	menu.clearConsole();
 	menu.drawFrame();
 	menu.Write("Menu", 12, 0, BLUE, WHITE);*/
-
+	while (true) {
 	MyWindows input(85, 2, 35, 20, BLACK, WHITE);
 	
 	
 	
-	MyWindows console(2, 0, WIDTH, HEIGHT, BLUE, RED);
+	MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, RED);
 	console.clearConsole();
 	console.drawFrame();
-	console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
+	console.Write("Sort ", 12, 0, BLUE, WHITE);
 
 	int a[15] = { };
 	int size = sizeof(a) / sizeof(a[0]);
@@ -112,12 +112,13 @@ int main()
 	int left = (WIDTH - (w * size)) / 2;
 	drawArray(console, a, w, size, left);
 	
-	while (true) {
+	
 
 		int op = option(input);
 		switch (op) {
 		case 1:
 		{
+			console.Write(" Bubble Sort ", 12, 0, BLUE, WHITE);
 			for (int i = 0; i < size - 1; i++)
 			{
 				for (int j = 0; j < size - 1 - i; j++)
@@ -135,14 +136,14 @@ int main()
 					}
 					console.Write("L", left + w * j, HEIGHT - 2, RED, WHITE);
 					console.Write("R", left + w * (j + 1), HEIGHT - 2, RED, WHITE);
-					Sleep(500);
+					Sleep(200);
 				}
 
 				for (int h = size - 1 - i; h < size; h++)
 				{
 					console.Write(to_string(a[h]) + " ", left + w * h, HEIGHT - 3, RED, WHITE);
 				}
-				Sleep(100);
+				Sleep(200);
 				// Bắt phím ESC để dừng console chương trình
 				if (_kbhit())
 				{
@@ -234,13 +235,19 @@ int main()
 				//console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
 
 			}
+			console.Write(to_string(a[0]) + " ", left, HEIGHT - 3, RED, WHITE);
+			console.Write("   ", left, HEIGHT - 2, BLUE, WHITE);
+			console.Write("   ", left + w, HEIGHT - 2, BLUE, WHITE);
+			console.Write("DONE", (WIDTH - 6) / 2, HEIGHT - 2, BLUE, WHITE);
 			char c2 = _getch();
 
 			break;
 		}
 		case 4:
 		{
-			cout << "Ban da thoat chuong trinh" << endl;
+			/*input.Write("Bạn đã thoát chương trình", 1, 15, BLACK, RED);*/
+			console.clearConsole();
+			input.clearConsole();
 			break;
 		}
 

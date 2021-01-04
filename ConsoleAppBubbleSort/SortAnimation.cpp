@@ -87,7 +87,7 @@ int main()
 		console0.Write(" 3. Insertion Sort", 45, 12, BLACK, RED);
 		console0.Write(" 4. Exit", 45, 14, BLACK, RED);
 		console0.Write("Moi ban nhap lua chon :", 10, 18, BLACK, RED);
-
+		console0.gotoXY(40, 18);
 		cin >> select;
 
 		MyWindows console(0, 0, WIDTH, HEIGHT, BLUE, RED);
@@ -235,7 +235,7 @@ int main()
 		}
 	}
 
-			} while (select != 4); ;
+			} while (select != 4);
 }
  
 
